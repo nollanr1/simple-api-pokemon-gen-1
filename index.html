@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="Please don't sue me, Nintendo">
+    	<meta name="keywords" content="Simple API, Practice API">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Generation 1 Pokémon Types API</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="/css/normalize.css">
+		<link rel="stylesheet" href="/css/style.css">
+	</head>
+	<body>
+		<h1>Generation 1 Pokémon types API</h1>
+		<section>
+			<p>This is a simple API that returns the name and types of Pokémon as they appeared in Generation 1.</p>
+			<p>These are returned as a JSON object, with the form <pre>{ name: &lt;Pokémon's Name&gt;, types: [&lt;Type 1&gt;, &lt;Possibly Type 2&gt;] }</pre></p>
+			<p>If the Pokémon only has one type, the types array will only have the one string.</p>
+		</section>
+		<section>
+		<h2>USAGE:</h2>
+		<ul>
+			<li><pre>api/name/&lt;Name&gt;</pre></li>
+			<li>Get a Pokémon's types by name. If you input <a href="/api/name/Bulbasaur">Bulbasaur</a>, you get back Bulbasaur's name and type(s) in an array.</li>
+			<li>The name must be <em>exact</em>: If you want Mr. Mime, it has to be "Mr. Mime" exactly, not mr. mime, Mr Mime, or Mister Mime. If you want Farfetch'd, it has to be "Farfetch'd", not "Farfetchd", "farfetch'd", or "Farfetch&#x2019;d".</li>
+			<li>If the name isn't an exact match, an <a href="/api/name/Example Error">error message</a> will be returned.</li>
+		</ul>
+		<ul>
+			<li><pre>api/dex/&lt;Dex Number&gt;</pre></li>
+			<li>Get a Pokémon's name and types by Pokédex number. If you input <a href="/api/dex/25">25</a>, you get back Pokémon #25's name and type(s) in an array.</li>
+			<li>If an out-of-bounds number (or something else that isn't a number) is input, <a href="/api/dex/255">MissingNo.</a> will be returned.</li>
+		</ul>
+	</section>
+	<section id="QandA">
+		<h2>Q &amp; A</h2>
+		<ul>
+			<li>
+				Why only Generation 1? Are you some kind of elitist?
+			</li>
+			<li>
+				Information about the modern state of Pokémon is readily available from multiple sources (I personally prefer <a href="https://bulbapedia.bulbagarden.net/wiki/Main_Page">Bulbapedia</a>, but <a href="https://serebii.net/pokemon/">Serebii</a> is also a good option.)
+				This was a bit more niche - and also a project thrown together over a weekend, so a Generation 1 API was faster and easier.
+			</li>
+		</ul>
+		<ul>
+			<li>
+				Why is MissingNo. the only visible glitch? Aren't there other glitch-mon?
+			</li>
+			<li>
+				Yes, there are others. MissingNo. is the most famous. In the future I may add a lookup by internal hex value, through which other glitch-mon will be viewable.
+			</li>
+		</ul>
+		<ul>
+			<li>
+				Why would someone even use this API? Wouldn't it be easier to use a static table or something?
+			</li>
+			<li>
+				The purpose of this API is to <em>be</em> a simple API, so that people who are learning web development have a front they can experiment with. If you want an API for this purpose that isn't Pokémon, I recommend consulting this <a href="https://github.com/public-api-lists/public-api-lists">public API list</a>.
+			</li>
+		</ul>
+	</section>
+	</body>
+</html>
